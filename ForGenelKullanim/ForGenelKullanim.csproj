@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AF27E4D7-773F-48B0-82EC-6C1994967226}</ProjectGuid>
+    <ProjectGuid>{AC8C4884-4BA3-4E68-AE92-BA9F79D1F333}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DegiskenAlistirmalar1</RootNamespace>
-    <AssemblyName>DegiskenAlistirmalar1</AssemblyName>
+    <RootNamespace>ForGenelKullanim</RootNamespace>
+    <AssemblyName>ForGenelKullanim</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

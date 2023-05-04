@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7D8C296B-78E1-4EF3-B827-381AE92400D7}</ProjectGuid>
+    <ProjectGuid>{9746ABC8-C62A-40E5-9226-10BBC27A0F84}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>KararYapilariIf</RootNamespace>
     <AssemblyName>KararYapilariIf</AssemblyName>

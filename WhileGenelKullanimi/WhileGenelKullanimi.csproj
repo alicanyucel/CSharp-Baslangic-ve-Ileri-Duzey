@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AF1A7B63-21AE-4A50-9F2D-30902223DA49}</ProjectGuid>
+    <ProjectGuid>{9C338053-6E07-4E9D-B0AE-D5E5D0041751}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AritmatikselOperatorlerAlistirma1</RootNamespace>
-    <AssemblyName>AritmatikselOperatorlerAlistirma1</AssemblyName>
+    <RootNamespace>WhileGenelKullanimi</RootNamespace>
+    <AssemblyName>WhileGenelKullanimi</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

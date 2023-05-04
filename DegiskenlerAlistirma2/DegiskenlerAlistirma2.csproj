@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2CA4E9A2-003D-465A-8E3D-802CF4BAEA7B}</ProjectGuid>
+    <ProjectGuid>{36A17A83-7B80-4AEE-A459-8F0E3D9507E8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>KararYapilariAlistirmalar</RootNamespace>
-    <AssemblyName>KararYapilariAlistirmalar</AssemblyName>
+    <RootNamespace>DegiskenAlistirmalar1</RootNamespace>
+    <AssemblyName>DegiskenAlistirmalar1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
