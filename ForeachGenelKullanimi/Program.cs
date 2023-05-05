@@ -22,22 +22,22 @@ namespace ForeachGenelKullanimi
 
             #region Ornek Uygulamalar -- 
 
-            #region Uygulama 1 : int veri tipinde bir dizi oluşturalım , kullanıcımız dizinin kaç elemanlı olacağı bilgisini bize versin, ve dizi içindeki alanlara değer ataması yapsın. Daha sonra dizi içerisindeki elemanların toplamlarını ve ortalamasını ekrana yazdıran bir uygulama yazalım. 
+            #region Uygulama 1 : int veri tipinde bir dizi oluşturalım, kullanıcımız dizinin kaç elemanlı olacağı bilgisini bize versin, ve dizi içindeki alanlara değer ataması yapsın. Daha sonra dizi içerisindeki elemanların toplamlarını ve ortalamasını ekrana yazdıran bir uygulama yazalım. 
 
-            Console.WriteLine("Lütfen oluşturmak istediğiniz veri kümesinin uzunluğunu giriniz");
+            Console.Write("Lütfen oluşturmak istediğiniz veri kümesinin uzunluğunu giriniz : ");
             string uygulama1DiziUzunluk = Console.ReadLine();
-            int uygulamaDiziUzunlukInt = int.Parse(uygulama1DiziUzunluk);
+            int uygulama1DiziUzunlukInt = int.Parse(uygulama1DiziUzunluk);
 
-            int[] uygulama1Dizi = new int[uygulamaDiziUzunlukInt];
+            int[] uygulama1Dizi = new int[uygulama1DiziUzunlukInt];
 
             for (int uygulamaSayac = 0; uygulamaSayac < uygulama1Dizi.Length; uygulamaSayac++)
             {
-                Console.WriteLine("{0}. index e denk gelen değeri giriniz", uygulamaSayac);
+                Console.Write("{0}. indexe denk gelen değeri giriniz : ", uygulamaSayac);
 
                 uygulama1Dizi[uygulamaSayac] = int.Parse(Console.ReadLine());
             }
 
-            Console.WriteLine("Tebrikler dizinin içerisindeki tüm alanları doldurdunuz");
+            Console.WriteLine("Tebrikler dizinin içerisindeki tüm alanları doldurdunuz.");
 
             Console.WriteLine("Dizi içerisindeki değerler ve toplam, ortalama değeri aşağıdaki gibidir.");
 
