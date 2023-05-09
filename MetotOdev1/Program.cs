@@ -25,17 +25,17 @@ namespace MetotOdev1
             Console.Write("Soyad : ");
             ogrenciSoyad = Console.ReadLine();
 
-            Console.Write("Not 1: ");
+            Console.Write("Not 1 : ");
             not1 = decimal.Parse(Console.ReadLine());
 
-            Console.Write("Not 2: ");
+            Console.Write("Not 2 : ");
             not2 = decimal.Parse(Console.ReadLine());
 
-            //Console.Write("Not 3:");
-            //not3 = decimal.Parse(Console.ReadLine());
+            Console.Write("Not 3 : ");
+            not3 = decimal.Parse(Console.ReadLine());
 
             ogrenci O = new ogrenci();
-            O.ogrenciNotHesapla(ogrenciAd, ogrenciSoyad, not1, not2);
+            O.ogrenciNotHesapla(ogrenciAd, ogrenciSoyad, not1, not2, not3);
 
         }
     }

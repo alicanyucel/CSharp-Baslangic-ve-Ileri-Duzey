@@ -8,7 +8,7 @@ namespace MetotOdev1
 {
     public class ogrenci
     {
-        public void ogrenciNotHesapla(string ad, string soyad, decimal not1, decimal not2, decimal not3 = 45)
+        public void ogrenciNotHesapla(string ad, string soyad, decimal not1, decimal not2, decimal not3 = 45) // Not3 girilmeyebilir, devamında başka bir parametre girilcekse onunda opsiyonel olması gerekiyor.
         {
             Console.WriteLine("Öğrencinin bilgileri aşağıdaki gibidir.");
             Console.WriteLine("Ad Soyad : {0} {1}", ad, soyad);
