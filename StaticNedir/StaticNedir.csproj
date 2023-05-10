@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{842230E0-9440-4FE5-9EFC-30C4C451E715}</ProjectGuid>
+    <ProjectGuid>{60424C0F-2B42-4EB9-A2CF-BCA2443E93C3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EgitimeBaslamadanOnce</RootNamespace>
-    <AssemblyName>EgitimeBaslamadanOnce</AssemblyName>
+    <RootNamespace>StaticNedir</RootNamespace>
+    <AssemblyName>StaticNedir</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticOgrenci.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EgitimeBaslamadanOnce")]
+[assembly: AssemblyTitle("StaticNedir")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EgitimeBaslamadanOnce")]
+[assembly: AssemblyProduct("StaticNedir")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("842230e0-9440-4fe5-9efc-30c4c451e715")]
+[assembly: Guid("60424c0f-2b42-4eb9-a2cf-bca2443e93c3")]
 
 // Version information for an assembly consists of the following four values:
 //
