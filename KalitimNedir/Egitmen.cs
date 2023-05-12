@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KalitimNedir
 {
-    public class Egitmen : temelTip
+    public sealed class Egitmen : Personel
     {
         public string brans { get; set; }
         public string bransSeviye { get; set; }

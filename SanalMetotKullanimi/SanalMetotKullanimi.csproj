@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4564EF1F-4A53-4855-A8F0-C42D8CF09008}</ProjectGuid>
+    <ProjectGuid>{DF6C5C94-EAA4-4E8D-9394-AD6BD643FB4F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>KalitimNedir</RootNamespace>
-    <AssemblyName>KalitimNedir</AssemblyName>
+    <RootNamespace>SanalMetotKullanimi</RootNamespace>
+    <AssemblyName>SanalMetotKullanimi</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Egitmen.cs" />
-    <Compile Include="Ogrenci.cs" />
-    <Compile Include="Personel.cs" />
+    <Compile Include="baseClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="temelTip.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="Televizyon.cs" />
+    <Compile Include="Urun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Bolum", "5.Bolum", "{62E9BD88-F432-42A9-88C9-37E6B086ADB3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Bolum", "05.Bolum", "{62E9BD88-F432-42A9-88C9-37E6B086ADB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inceleme", "Inceleme\Inceleme.csproj", "{8F5D72E2-40D7-4D2B-8A54-DA3CC49AE7D6}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleReadLineInceleme", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UygulamaSatirSatirInceleme", "UygulamaSatirSatirInceleme\UygulamaSatirSatirInceleme.csproj", "{9F1F2B77-2AD0-4E29-832E-64D2CDD98EE7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Bolum", "6.Bolum", "{B4B4F1E0-8A2B-44AB-81E2-D255487A3D00}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Bolum", "06.Bolum", "{B4B4F1E0-8A2B-44AB-81E2-D255487A3D00}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DegiskenNedir", "DegiskenNedir\DegiskenNedir.csproj", "{E267F98C-18DE-46DD-B820-26307C3B2B72}"
 EndProject
@@ -45,7 +45,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VarAnahtarKullanimi", "VarA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DegiskenlerAlistirma3", "DegiskenlerAlistirma3\DegiskenlerAlistirma3.csproj", "{CD83123D-E36A-40E8-9639-307E7B04C518}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.Bolum", "7.Bolum", "{AF788BD3-CD5E-453B-8266-F44DB5E022FB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07.Bolum", "07.Bolum", "{AF788BD3-CD5E-453B-8266-F44DB5E022FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AritmatikselOperatorlerCikarma", "AritmatikselOperatorlerCikarma\AritmatikselOperatorlerCikarma.csproj", "{2DB8A55C-C756-4003-BD77-349F60C0FC61}"
 EndProject
@@ -67,7 +67,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MantiksalOperatorVe", "Mant
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MantiksalOperatorVeya", "MantiksalOperatorVeya\MantiksalOperatorVeya.csproj", "{380D75DE-27C0-4DE8-A332-E544F80BE890}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8.Bolum", "8.Bolum", "{A8D47BFD-62F1-4550-9D51-7B07CA477E2A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.Bolum", "08.Bolum", "{A8D47BFD-62F1-4550-9D51-7B07CA477E2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwitchCase", "SwitchCase\SwitchCase.csproj", "{2E0A2316-7386-4977-8388-74D5C7944D32}"
 EndProject
@@ -89,7 +89,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KararYapilariAlistirmalar4"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KararYapilariAlistirmalar5", "KararYapilariAlistirmalar5\KararYapilariAlistirmalar5.csproj", "{D7A22A54-C02F-43D4-BAE6-1169212F78AC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9.Bolum", "9.Bolum", "{D3F19E22-A03C-4E8A-8EEE-7580D576011E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09.Bolum", "09.Bolum", "{D3F19E22-A03C-4E8A-8EEE-7580D576011E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForGenelKullanim", "ForGenelKullanim\ForGenelKullanim.csproj", "{AC8C4884-4BA3-4E68-AE92-BA9F79D1F333}"
 EndProject
@@ -158,6 +158,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "17.Bolum", "17.Bolum", "{5830675D-D446-4D76-AE72-14DB63252EE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalitimNedir", "KalitimNedir\KalitimNedir.csproj", "{4564EF1F-4A53-4855-A8F0-C42D8CF09008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalitimOdevUygulamasi", "KalitimOdevUygulamasi\KalitimOdevUygulamasi.csproj", "{F78790E8-3756-48A6-B0AB-FB7D56252458}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "18.Bolum", "18.Bolum", "{46731ECA-AFAB-4846-9E32-AB563D8F65BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanalMetotNedir", "SanalMetotNedir\SanalMetotNedir.csproj", "{664F6E11-8E1F-4A9C-9FAD-DCCCF5C98FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanalMetotKullanimi", "SanalMetotKullanimi\SanalMetotKullanimi.csproj", "{DF6C5C94-EAA4-4E8D-9394-AD6BD643FB4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "19.Bolum", "19.Bolum", "{F024CE68-9888-46D8-904B-25D3F6A8F67D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -425,6 +435,18 @@ Global
 		{4564EF1F-4A53-4855-A8F0-C42D8CF09008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4564EF1F-4A53-4855-A8F0-C42D8CF09008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4564EF1F-4A53-4855-A8F0-C42D8CF09008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78790E8-3756-48A6-B0AB-FB7D56252458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78790E8-3756-48A6-B0AB-FB7D56252458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78790E8-3756-48A6-B0AB-FB7D56252458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78790E8-3756-48A6-B0AB-FB7D56252458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664F6E11-8E1F-4A9C-9FAD-DCCCF5C98FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664F6E11-8E1F-4A9C-9FAD-DCCCF5C98FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664F6E11-8E1F-4A9C-9FAD-DCCCF5C98FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664F6E11-8E1F-4A9C-9FAD-DCCCF5C98FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6C5C94-EAA4-4E8D-9394-AD6BD643FB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6C5C94-EAA4-4E8D-9394-AD6BD643FB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6C5C94-EAA4-4E8D-9394-AD6BD643FB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6C5C94-EAA4-4E8D-9394-AD6BD643FB4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -495,6 +517,9 @@ Global
 		{5D023E9D-0E12-497E-8451-CC4C18E71406} = {D6ABEF3C-94A5-4327-9110-FE3E97A57BDE}
 		{BF602845-CBE3-474A-B3A6-815143551B86} = {C6D2767E-2E46-4CCE-BDEA-0C3D9CF1BB34}
 		{4564EF1F-4A53-4855-A8F0-C42D8CF09008} = {5830675D-D446-4D76-AE72-14DB63252EE8}
+		{F78790E8-3756-48A6-B0AB-FB7D56252458} = {5830675D-D446-4D76-AE72-14DB63252EE8}
+		{664F6E11-8E1F-4A9C-9FAD-DCCCF5C98FCB} = {46731ECA-AFAB-4846-9E32-AB563D8F65BA}
+		{DF6C5C94-EAA4-4E8D-9394-AD6BD643FB4F} = {46731ECA-AFAB-4846-9E32-AB563D8F65BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5E4B29E-10B3-45A3-BEC5-A6FE4C1A4095}

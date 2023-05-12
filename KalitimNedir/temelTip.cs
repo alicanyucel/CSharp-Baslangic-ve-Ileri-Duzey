@@ -31,5 +31,16 @@ namespace KalitimNedir
             Random random = new Random();
             this.id = random.Next(1000, 9000);
         }
+
+        public void TemelTipMetot1()
+        {
+            Console.WriteLine("Temel Tip => Metot 1");
+            // TemelTipMetot2(); Protected class içerisinde private gibi davranır.
+        }
+
+        protected void TemelTipMetot2()
+        {
+            Console.WriteLine("Protected Metot ...");
+        }
     }
 }
