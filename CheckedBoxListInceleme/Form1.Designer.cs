@@ -1,4 +1,4 @@
-﻿namespace ListBoxInceleme
+﻿namespace CheckedBoxListInceleme
 {
     partial class Form1
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstUrunler = new System.Windows.Forms.ListBox();
+            this.chkListBox = new System.Windows.Forms.CheckedListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtUrunAciklama = new System.Windows.Forms.RichTextBox();
             this.txtYazar = new System.Windows.Forms.TextBox();
@@ -46,16 +46,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctUrunResim)).BeginInit();
             this.SuspendLayout();
             // 
-            // lstUrunler
+            // chkListBox
             // 
-            this.lstUrunler.FormattingEnabled = true;
-            this.lstUrunler.ItemHeight = 16;
-            this.lstUrunler.Location = new System.Drawing.Point(12, 12);
-            this.lstUrunler.Name = "lstUrunler";
-            this.lstUrunler.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lstUrunler.Size = new System.Drawing.Size(283, 420);
-            this.lstUrunler.TabIndex = 0;
-            this.lstUrunler.SelectedIndexChanged += new System.EventHandler(this.lstUrunler_SelectedIndexChanged);
+            this.chkListBox.FormattingEnabled = true;
+            this.chkListBox.Location = new System.Drawing.Point(13, 22);
+            this.chkListBox.Name = "chkListBox";
+            this.chkListBox.Size = new System.Drawing.Size(263, 378);
+            this.chkListBox.TabIndex = 0;
+            this.chkListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListBox_ItemCheck);
             // 
             // groupBox1
             // 
@@ -69,9 +67,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.pctUrunResim);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(301, 46);
+            this.groupBox1.Location = new System.Drawing.Point(282, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 386);
+            this.groupBox1.Size = new System.Drawing.Size(489, 337);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seçilen Ürün Detay Bilgisi ";
@@ -80,7 +78,7 @@
             // 
             this.txtUrunAciklama.Location = new System.Drawing.Point(6, 150);
             this.txtUrunAciklama.Name = "txtUrunAciklama";
-            this.txtUrunAciklama.Size = new System.Drawing.Size(456, 230);
+            this.txtUrunAciklama.Size = new System.Drawing.Size(456, 181);
             this.txtUrunAciklama.TabIndex = 3;
             this.txtUrunAciklama.Text = "";
             // 
@@ -141,7 +139,7 @@
             // 
             // pctUrunResim
             // 
-            this.pctUrunResim.Location = new System.Drawing.Point(8, 20);
+            this.pctUrunResim.Location = new System.Drawing.Point(6, 21);
             this.pctUrunResim.Name = "pctUrunResim";
             this.pctUrunResim.Size = new System.Drawing.Size(100, 110);
             this.pctUrunResim.TabIndex = 1;
@@ -159,7 +157,7 @@
             // cmbUrunListe
             // 
             this.cmbUrunListe.FormattingEnabled = true;
-            this.cmbUrunListe.Location = new System.Drawing.Point(391, 4);
+            this.cmbUrunListe.Location = new System.Drawing.Point(372, 22);
             this.cmbUrunListe.Name = "cmbUrunListe";
             this.cmbUrunListe.Size = new System.Drawing.Size(399, 24);
             this.cmbUrunListe.TabIndex = 7;
@@ -167,7 +165,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(306, 12);
+            this.label1.Location = new System.Drawing.Point(287, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 6;
@@ -177,15 +175,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(795, 418);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbUrunListe);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lstUrunler);
+            this.Controls.Add(this.chkListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "List Box İnceleme";
+            this.Text = "Checked List Box";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -197,7 +195,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstUrunler;
+        private System.Windows.Forms.CheckedListBox chkListBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox txtUrunAciklama;
         private System.Windows.Forms.TextBox txtYazar;

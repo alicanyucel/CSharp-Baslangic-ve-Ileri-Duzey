@@ -37,5 +37,43 @@ namespace ListBoxInceleme
             //lstUrunler.ValueMember = "id";
             lstUrunler.DataSource = Database.UrunTablo;
         }
+
+        private void lstUrunler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int urunSecimAdet = lstUrunler.SelectedItems.Count;
+
+            if (urunSecimAdet == 1)
+            {
+                ListBox lbox = (ListBox)sender;
+                // lbox = sender as ListBox;
+
+                Urun u1 = (Urun)lstUrunler.SelectedItem;
+                pctUrunResim.Image = Image.FromFile(u1.urunResim);
+                pctUrunResim.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                txtUrunAdi.Text = u1.urunAdi;
+                txtKategori.Text = u1.urunKategori;
+                txtStokAdet.Text = u1.stokAdet.ToString();
+                txtYazar.Text = u1.yazar;
+                txtUrunAciklama.Text = u1.aciklama;
+            }
+
+            else if (urunSecimAdet > 1)
+            {
+                List<Urun> secilenUrunListe = new List<Urun>();
+                foreach (var item in lstUrunler.SelectedItems)
+                {
+                    secilenUrunListe.Add(item as Urun);
+                }
+
+                UrunSecimKullanici secimKullanici = new UrunSecimKullanici(secilenUrunListe.ToArray());
+                secimKullanici.ShowDialog();
+            }
+
+            else
+            {
+                MessageBox.Show("Lütfen detayını görmek istediğiniz ürünü seçiniz.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

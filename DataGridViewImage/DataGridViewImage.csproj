@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38270359-0ECC-46FB-9BB0-5841C28E7D84}</ProjectGuid>
+    <ProjectGuid>{A30AB84C-F54C-4EC6-9503-249E97BA34E3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ListBoxInceleme</RootNamespace>
-    <AssemblyName>ListBoxInceleme</AssemblyName>
+    <RootNamespace>DataGridViewImage</RootNamespace>
+    <AssemblyName>DataGridViewImage</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,12 +55,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Urun.cs" />
-    <Compile Include="UrunSecimKullanici.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UrunSecimKullanici.Designer.cs">
-      <DependentUpon>UrunSecimKullanici.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,9 +67,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UrunSecimKullanici.resx">
-      <DependentUpon>UrunSecimKullanici.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="Properties\DataSources\Urun.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
