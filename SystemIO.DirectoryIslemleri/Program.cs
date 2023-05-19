@@ -12,10 +12,11 @@ namespace SystemIO.DirectoryIslemleri
     {
         static void Main(string[] args)
         {
-            YeniKlasorOlustur("D:\\Udemy");
-            KlasorVarlikKontrolu("D:\\Udemy");
-            KlasorSilmeIslemleri("D:\\Udemy");
-            Odev1();
+            //YeniKlasorOlustur("D:\\Udemy");
+            //KlasorVarlikKontrolu("D:\\Udemy");
+            //KlasorSilmeIslemleri("D:\\Udemy");
+            //Odev1();
+            //KlasorTasima("D:\\Udemy", "D:\\TasimaIslemi\\Udemy");
         }
 
         static void YeniKlasorOlustur(string path)
@@ -72,6 +73,11 @@ namespace SystemIO.DirectoryIslemleri
                     Console.WriteLine("Dosya sistemde oluşturuldu.");
                 }
             }
+        }
+
+        static void KlasorTasima(string kaynak, string hedef)
+        {
+            Directory.Move(kaynak, hedef);
         }
     }
 }
