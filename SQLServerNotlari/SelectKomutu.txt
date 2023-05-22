@@ -1,0 +1,2 @@
+﻿select * from Person.Person -- Tümü gelir
+select FirstName,Title,LastName from Person.Person -- İstediğimiz kolonlar gelir.
