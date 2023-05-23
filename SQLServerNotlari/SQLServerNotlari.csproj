@@ -49,5 +49,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="FullJoin.txt" />
+    <Content Include="Islemler.txt" />
+    <Content Include="RightJoin.txt" />
+    <Content Include="LeftJoinNedir.txt" />
+    <Content Include="InnerJoinNedir.txt" />
+    <Content Include="DistinctKullanimi.txt" />
+    <Content Include="GroupByKullanimi.txt" />
+    <Content Include="WhereIfadesininKullanimi.txt" />
+    <Content Include="TopIfadesininKullanimi.txt" />
+    <Content Include="KolonIsimleriniDegistirme.txt" />
+    <Content Include="SelectKomutu.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

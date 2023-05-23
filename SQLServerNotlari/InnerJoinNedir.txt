@@ -1,0 +1,100 @@
+﻿select ProductID,Name,ProductSubcategoryID from Production.Product
+where ProductSubcategoryID is not null
+-- 14
+select Name from Production.ProductSubcategory where ProductSubcategoryID = 14
+
+select 
+Production.Product.ProductID,
+Production.Product.Name,
+Production.ProductSubcategory.Name as ProductSubCategoryName
+from
+Production.Product inner join Production.ProductSubcategory 
+on Production.Product.ProductSubcategoryID = Production.ProductSubcategory.ProductSubcategoryID -- Bu ifade Produck tan ıd ve name ile beraber subcategorinin namein getirir. Bunu 2 tablodada sub category ıdsi eşit olanlarda yapar.
+
+select
+top 10
+C.AccountNumber,
+count (Soh.SalesOrderNumber) as TotalOrderNumber
+from Sales.SalesOrderHeader SOH inner join Sales.Customer C
+on SOH.CustomerID = C.CustomerID
+group by C.AccountNumber
+order by TotalOrderNumber desc
+ -- En çok sipariş veren 10 müşterinin kaç tane sipariş verdiği
+ -- İnner join ile idsi eşleşen kolonlar gösterilir
+
+ select * from Sales.SalesOrderDetail
+select * from Sales.SalesOrderHeader
+
+select 
+SOH.AccountNumber,
+SOH.SalesOrderNumber,
+PP.Name,
+PC.Name PRoductCategoryName,
+PSC.Name ProductSubCategoryName,
+SOD.UnitPrice
+from Sales.SalesOrderDetail SOD 
+inner join Sales.SalesOrderHeader SOH on SOD.SalesOrderID = Soh.SalesOrderID
+inner join Production.Product PP on SOD.ProductID = PP.ProductID
+inner join Production.ProductSubcategory PSC on PP.ProductSubcategoryID = PSC.ProductSubcategoryID
+inner join Production.ProductCategory PC on PSC.ProductCategoryID = PC.ProductCategoryID
+
+----------------------------------------------------------------------------------------------------
+
+--production.products brand_id, category_Id liste olarak çekelim.
+select 
+PP.product_id,
+PP.product_name,
+PB.brand_name,
+PC.category_id
+from production.products PP
+inner join production.brands PB on PP.brand_id = PB.brand_id
+inner join production.categories PC on PP.category_id=PC.category_id
+order by PC.category_name,PB.brand_name,PP.product_name
+
+--production.products category_id degerine göre kaç marka var.
+select production.categories.category_name,count(brand_id) as Amount from production.products
+inner join production.categories on production.products.category_id = production.categories.category_id
+group by production.categories.category_name
+
+--[sales].[orders] müşterilere göre sipariş adetlerini çekelim.
+select concat (SC.first_name ,' ',SC.last_name)as FullName, count(1) as Amount  from sales.orders SO inner join sales.customers SC
+on SO.customer_id = SC.customer_id
+group by concat (SC.first_name ,' ',SC.last_name)
+
+--sipariş adedine göre en çok satış yapan mağaza çekelim.
+select 
+SS.store_name, count(SO.order_id)
+from sales.orders SO inner join sales.stores SS
+on SO.store_id = SS.store_id
+group by SS.store_name
+
+--sipariş adedine göre en çok satış yapan personel çekelim.
+select 
+concat (SS.first_name ,' ',SS.last_name),
+count(SO.order_id)
+from sales.orders SO inner join sales.staffs SS
+on SO.staff_id = SS.staff_id
+group by concat (SS.first_name ,' ',SS.last_name)
+
+--[sales].[order_items] en çok satış yapan 5 ürünü ve ilgili ürünlerin marka ve kategori isimlerin getirelim.
+select 
+top 5
+PB.brand_name,
+PC.category_name,
+count(SOI.order_id)
+from sales.order_items SOI 
+inner join production.products PP on SOI.product_id = PP.product_id
+inner join production.categories PC on PP.category_id = PC.category_id
+inner join production.brands PB on PP.brand_id = PB.brand_id
+group by 
+PB.brand_name,
+PC.category_name
+order by count(SOI.order_id) desc
+
+--[production].[stocks] mağaza bazında ürünlerin toplam adetlerini çekelim.
+select 
+SS.store_name,
+sum(PS.quantity)
+from production.stocks PS
+inner join sales.stores SS on PS.store_id = SS.store_id
+group by SS.store_name

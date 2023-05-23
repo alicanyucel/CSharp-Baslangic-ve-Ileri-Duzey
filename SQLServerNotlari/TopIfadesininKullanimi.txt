@@ -1,0 +1,2 @@
+﻿select top 10 * from Production.Product -- İlk 10 kayıdı getirir
+select top 10 percent * from Production.Product -- İlk 10 kayıdı getirir // %10 kaydı getirir.

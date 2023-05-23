@@ -1,0 +1,3 @@
+﻿select FirstName as Isim from Person.Person -- Firstname kolununu isim olarak çektik.
+select FirstName as [Isim Soyisim] from Person.Person -- Arada boşluk varsa
+select FirstName as Isim ,LastName as Soyisim from Person.Person -- Birden fazla kolun adı değiştirme

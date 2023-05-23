@@ -1,0 +1,6 @@
+﻿select * from Production.Product PP inner join Production.ProductSubcategory PSC
+on PP.ProductSubcategoryID = PSC.ProductSubcategoryID -- 295 kayıt
+
+select * from Production.Product PP left join Production.ProductSubcategory PSC
+on PP.ProductSubcategoryID = PSC.ProductSubcategoryID -- 504 kayıt
+-- ProductSubcategory tablosunda idsi null veya eşleşmeyenlerde gelir.

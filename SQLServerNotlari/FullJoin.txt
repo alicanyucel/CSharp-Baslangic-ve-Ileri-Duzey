@@ -1,0 +1,5 @@
+﻿select * from Production.Product PP inner join Production.ProductSubcategory PSC
+on PP.ProductSubcategoryID = PSC.ProductSubcategoryID -- 295 kayıt -- Sadece eşleşenler gelir
+
+select * from Production.Product PP full join Production.ProductSubcategory PSC
+on PP.ProductSubcategoryID = PSC.ProductSubcategoryID -- ne kadar kayıt varsa hepsini getirir.

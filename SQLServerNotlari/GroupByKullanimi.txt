@@ -1,0 +1,6 @@
+﻿select Color,sum(1) from Production.Product
+where color is not null -- 256 tane null olmayan kayıt geldi
+group by Color -- hangi renkten kaç tane olduğunu gösterdi.
+
+select PersonType,sum(1) from Person.Person
+group by PersonType -- Personel tiplerine göre grupladık.

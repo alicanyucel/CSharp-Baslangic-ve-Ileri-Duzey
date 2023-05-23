@@ -1,0 +1,59 @@
+﻿DATABASE İŞLEMLERİ
+create database udemyEfrunEvdi
+drop database udemyEfrunEvdi
+
+
+TABLO İŞLEMLERİ
+create table Urunler
+(
+id int,
+urunAdi nvarchar(100),
+miktar int,
+olusturmaTarihi datetime
+)
+
+alter table Urunler
+add Email nvarchar(200) -- kolon ekleme
+
+alter table Urunler
+drop column Email -- kolon silme
+
+drop table Urunler -- tablo silme
+
+
+
+KISITLAMA İŞLEMLERİ
+-- Not Null : boş geçilemez
+create table constraintNotnull
+(
+id int,
+isim nvarchar(50),
+soyisim nvarchar(50) not null
+)
+
+-- Unique : eşsiz olmalı
+create table constraintUnique
+(
+id int not null unique,
+isim nvarchar(50),
+soyisim nvarchar(50),
+emailAdres nvarchar(100) unique
+)
+
+-- Primary Key
+
+create table constraintPrimaryKey
+(
+id int primary key, --not null unique,
+isim nvarchar(50),
+soyisim nvarchar(50),
+)
+
+-- Check : kontrol eder
+create table constraintCheck
+(
+id int primary key,
+isim nvarchar(50),
+soyisim nvarchar(50),
+yas int not null check(yas >= 15)
+)

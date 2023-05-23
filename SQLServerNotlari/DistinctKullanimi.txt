@@ -1,0 +1,1 @@
+﻿select distinct JobTitle from HumanResources.Employee -- Tekrar eden verileri tekilleştirir.

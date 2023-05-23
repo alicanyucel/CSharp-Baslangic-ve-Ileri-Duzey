@@ -1,0 +1,90 @@
+﻿select * from Production.Product
+where MakeFlag = 1 -- MakeFlag = 1 olanların tüm kolonları getirir.
+
+--select kolon1,kolon2,... from tabloadı
+--where (kriter)
+--şart1
+
+select * from Production.Product
+where MakeFlag=1 and SafetyStockLevel=800 -- 2 koşulu da sağlayanlar geldi.
+
+select * from Production.Product
+where SafetyStockLevel = 800 -- 800 alanları getirir.
+
+select * from Production.Product
+where SafetyStockLevel >= 800 and SafetyStockLevel <= 1000 --[800,1000] arası olanları getirir.
+
+select * from HumanResources.Employee
+where JobTitle='Desing Engineer' or JobTitle='Tool Desinger' -- Birden fazla şart aynı kolonda ise böyle yazmıyoruz.
+
+select * from HumanResources.Employee
+where JobTitle in ('Desing Engineer','Tool Desinger') -- in operatörü ile kolon içinde arama yaptık.
+
+select * from HumanResources.Employee
+where JobTitle not in ('Desing Engineer','Tool Desinger') -- not in içermeyenleri getir
+
+select * from Production.Product
+where SafetyStockLevel >= 800 and SafetyStockLevel <= 1000 -- Bu yanlış..
+
+select * from Production.Product
+where SafetyStockLevel between 800 and 1000 -- Sınırlar dahil betwwen kullanımı
+order by Name desc -- desc olmazsa a-z, olursa z-a
+
+select * from Production.Product
+where 
+ProductNumber like 'A%' -- Product number A ile başlayan
+
+select * from Production.Product
+where 
+ProductNumber like '%1' -- Product number 1 ile biten
+
+select * from Production.Product
+where 
+ProductNumber like '%4%' -- Product number 4 içeren
+
+select * from Person.Person
+where FirstName like 'K_n' -- İlk harfi K son harfi n olan isimleri getirir.
+
+-----------------------------------------------------------------------------------
+-- [production].[products] tablosunda bulunan kolonları türkçeleştirelim. Tablolar farklı olduğu için olan kolonlarla işlem yapılmıştır.
+select 
+ProductID as UrunID,
+Name as UrunAdi,
+ProductNumber as UrunNumarasi,
+Color as Renk
+from Production.Product
+-- [production].[products] tablosunda model yılı 2016 olan ürünleri sorgulayalım.
+select * from Production.Product
+where ReorderPoint = 750
+-- [production].[products] Model yılı 2016 - 2018 arasında olan ve ürün adında сус geçen ürünleri sorgulayalım.
+select * from Production.Product
+where ReorderPoint between 750 and 1000
+-- [sales].[customers] email adresi yahoo.com olan ve state NY veya CA olan kayıtları sorgulayalım.
+select * from Sales.Customer
+where AccountNumber like 'AW0000004%' and rowguid in('F3DFA401-85C6-4118-B5C5-6554310A1192','8FB34B30-B19D-4AEC-B02E-F1BE942800E5')
+-- [sales].[customers] ismi D ile bașlayan veya Soyadı S ile biten müşterileri sorgulayalım.
+select * from Sales.Customer
+where StoreID like '9%' or TerritoryID like '%5'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

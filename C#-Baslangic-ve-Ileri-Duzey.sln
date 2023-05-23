@@ -251,6 +251,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "29.Bolum", "29.Bolum", "{2F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqTeknolojisi", "LinqTeknolojisi\LinqTeknolojisi.csproj", "{F2D03109-AB24-4B1D-88C5-F1E76AFBF4B6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30.Bolum", "30.Bolum", "{2DA1F01E-F09D-4329-A827-2065D88ABFCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLServerNotlari", "SQLServerNotlari\SQLServerNotlari.csproj", "{12F195D1-D883-4F18-9F4D-EC68D36E6080}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -653,6 +657,10 @@ Global
 		{F2D03109-AB24-4B1D-88C5-F1E76AFBF4B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D03109-AB24-4B1D-88C5-F1E76AFBF4B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2D03109-AB24-4B1D-88C5-F1E76AFBF4B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F195D1-D883-4F18-9F4D-EC68D36E6080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F195D1-D883-4F18-9F4D-EC68D36E6080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F195D1-D883-4F18-9F4D-EC68D36E6080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F195D1-D883-4F18-9F4D-EC68D36E6080}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -757,6 +765,7 @@ Global
 		{41F3BF32-219E-4D3C-BE84-EF439C93E0C1} = {4AE8A05A-440D-49AC-B3D6-45E32414BF69}
 		{E98D71CE-22C3-47E1-ABD6-F9DE12178252} = {4AE8A05A-440D-49AC-B3D6-45E32414BF69}
 		{F2D03109-AB24-4B1D-88C5-F1E76AFBF4B6} = {2FBD6106-245A-48A5-909A-3B64DD0FDFA3}
+		{12F195D1-D883-4F18-9F4D-EC68D36E6080} = {2DA1F01E-F09D-4329-A827-2065D88ABFCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5E4B29E-10B3-45A3-BEC5-A6FE4C1A4095}
