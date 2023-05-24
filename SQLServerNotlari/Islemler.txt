@@ -57,3 +57,83 @@ isim nvarchar(50),
 soyisim nvarchar(50),
 yas int not null check(yas >= 15)
 )
+
+-- Default
+create table constraintDefault
+(
+id int primary key,
+isim nvarchar(50),
+soyisim nvarchar(50),
+olusturmaTarihi datetime default getdate(), -- o anın değerini yazar
+)
+
+-- Foreign Key
+create table musteri
+(
+id int primary key,
+musteriNumara int,
+tckn nvarchar(50),
+vkn nvarchar(50),
+isim nvarchar(50),
+soyisim nvarchar(50),
+olusturmaTarihi datetime default getdate(), -- o anın değerini yazar
+)
+
+create table musteriIletisimBilgileri
+(
+id int primary key,
+musteriId int,
+iletisinTipi int, -- 1: Gsm / 2: Açık Adres / 3: Sabit Telefon
+deger nvarchar(500),
+olusturmaTarih datetime
+
+foreign key (musteriId) references musteri(id)
+)
+
+-- Tablo içerisine yeni bir kayıt eklemek için insert komutu kullanırız.
+create table ogrenci
+(
+id int primary key,
+isim nvarchar(50),
+soyisim nvarchar(50),
+emailAdres nvarchar(50)
+)
+
+select * from ogrenci
+
+-- insert into tablo_adi (kolon1,kolon2,...) values ('',2,'')
+insert into ogrenci (id,isim,soyisim) values (1,'Cengiz','Atilla')
+
+-- insert into tablo_adi values ('',2,'')
+insert into ogrenci values (1,'Cengiz','Atilla','cengiz.atilla@hotmail.com')
+
+-- Update Komutu
+-- update tablo_adi
+-- set
+-- isim = 'Murat'
+-- where -- bunu yazmazsak isim kolonunun hepsini değiştirir
+-- id = ??
+
+update ogrenci
+set
+isim= 'Murat',
+soyisim='AtillaA'
+where
+id=1
+
+use AdventureWorks2019
+
+create table Personeller
+(
+id int primary key,
+isim nvarchar(50),
+soyisim nvarchar(50),
+emailAdres nvarchar(50),
+olusturmaTarihi datetime,
+degistirmeTarihi datetime,
+silindimi bit
+)
+
+select * from Personeller
+
+

@@ -1,0 +1,250 @@
+﻿-- StoreProcedure öncesi
+insert into Personeller values (2,'Cengiz','Atilla','bilgi@gmail.com',getdate(),null,0)
+select * From personeller
+
+-- StoreProcedure oluşturmak
+
+--create proc procedure_adi
+--(
+---- Parametre veya parametrelerimiz.
+--@id int,
+--@isim nvarchar(50)
+--)
+--as
+--begin
+---- procedure body
+--end
+
+create proc PersonelKayitEkle
+(
+@id int,
+@isim nvarchar(50),
+@soyisim nvarchar(50),
+@emailAdres nvarchar(50)
+)
+as
+begin
+
+insert into Personeller (id,isim,soyisim,emailAdres,olusturmaTarihi,silindimi) values
+(@id,@isim,@soyisim,@emailAdres,getdate(),0)
+
+end
+--------------------------------------------------------------------------
+exec PersonelKayitEkle -- Çalıştırmak istediğimiz prosedür
+@id=1,@isim='Cengiz',@soyisim='Atilla',@emailAdres='bilgi@gmail.com'
+
+select * from Personeller
+
+USE [AdventureWorks2019]
+GO
+/****** Object:  StoredProcedure [dbo].[PersonelKayitEkle]    Script Date: 24.05.2023 14:50:11 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[PersonelKayitEkle]
+(
+@id int,
+@isim nvarchar(50),
+@soyisim nvarchar(50),
+@emailAdres nvarchar(50)
+)
+as
+begin
+
+insert into Personeller (id,isim,soyisim,emailAdre,olusturmaTarihi,degistirmeTarihi,silindimi) values
+(@id,@isim,@soyisim,@emailAdres,getdate(),getdate(),0)
+
+end
+
+drop proc PersonelKayitEkle
+------------------------------------------------------
+create proc PersonelKayitEkle
+(
+@id int,
+@isim nvarchar(50),
+@soyisim nvarchar(50),
+@emailAdres nvarchar(50)
+)
+with encryption -- içeriği saklama 
+as
+begin
+
+insert into Personeller (id,isim,soyisim,emailAdres,olusturmaTarihi,silindimi) values
+(@id,@isim,@soyisim,@emailAdres,getdate(),0)
+
+end
+
+exec PersonelKayitEkle -- Çalıştırmak istediğimiz prosedür
+@id=1,@isim='Cengiz',@soyisim='Atilla',@emailAdres='bilgi@gmail.com'
+--------------------------------------------------------
+create proc PersonelGetir
+as
+begin
+select * from Personeller
+end
+
+exec PersonelGetir
+-------------------------------------------------------------
+select * from HumanResources.Employee
+
+create proc GetHumanResourceEmployee
+(
+@Gender char(1) = 'F'
+)
+as
+begin
+select * from HumanResources.Employee
+where Gender=@Gender
+end
+
+exec GetHumanResourceEmployee @Gender = 'M'
+
+create proc PersonelEkle2
+(
+@id int,
+@isim nvarchar(50),
+@soyisim nvarchar(50),
+@emailAdres nvarchar(50),
+@cinsiyet nchar(1)='M'
+)
+as
+
+begin
+insert into Personeller (id,isim,soyisim,emailAdres,olusturmaTarihi,silindimi,cinsiyet) values
+(@id,@isim,@soyisim,@emailAdres,getdate(),0,@cinsiyet)
+end
+-------------------------------------------------------------------------------------------------
+create database udemy
+use udemy
+
+-- Personeller
+-- id int primary key,
+-- isim nvarchar(50) zorunlu,
+-- soyisim nvarchar(50) zorunlu,
+-- emailAdress nvarchar(50) zorunlu ve benzersiz,
+-- cinsiyet nchar(1),
+-- olusturma tarihi zorunlu,
+-- durum bilgisi bool default true
+
+create table Personeller
+(
+id int primary key,
+isim nvarchar(50) not null,
+soyisim nvarchar(50) not null,
+emailAdress nvarchar(50) not null unique,
+cinsiyet nchar(1),
+olusturmaTarihi datetime not null,
+durum bit default 'true'
+)
+
+---------------------------------------------------------------------------------------
+
+insert into Personeller(id,isim,soyisim,emailAdress,cinsiyet,olusturmaTarihi)
+select 
+PP.BusinessEntityID, -- id
+PP.FirstName, -- İsim
+PP.LastName, -- Soyisim
+(lower (PP.FirstName + '.' + PP.LastName + '@abc.com')) as EmailAdres,
+HRE.Gender, -- cinsiyet
+GETDATE() as Tarih
+from AdventureWorks2019.Person.Person as PP
+inner join AdventureWorks2019.HumanResources.Employee as HRE 
+on
+PP.BusinessEntityID = HRE.BusinessEntityID
+
+select * from Personeller
+
+---------------------------------------------------------------------------------------
+
+/*
+PersonelEkle
+PersonelDuzenle
+PersonelSil
+
+PersonelListe (Parametre almayan sp)
+PersonelGetirID (id alan sp eğer değer girişi yapılmaz ise id nin default değeri 0)
+PersonelAraEmailAdres (Email adres değeri alacak zorunlu)
+*/
+
+create proc PersonelEkle
+(
+@id int,
+@isim nvarchar(50),
+@soyisim nvarchar(50),
+@emailAdres nvarchar(200),
+@cinsiyet nchar(1),
+@olusturmaTarihi datetime,
+@durum bit
+)
+with encryption
+as
+begin
+insert into Personeller (id,isim,soyisim,emailAdress,cinsiyet,olusturmaTarihi,durum)
+values (@id,@isim,@soyisim,@emailAdres,@cinsiyet,@olusturmaTarihi,@durum)
+return @@rowcount -- C# a sayı dönüyor.
+end
+
+create proc PersonelDuzenle
+(
+@id int,
+@isim nvarchar(50),
+@soyisim nvarchar(50),
+@emailAdres nvarchar(200)
+)
+with encryption
+as
+begin
+update Personeller 
+set
+isim = @isim,
+soyisim = @soyisim,
+emailAdress = @emailAdres
+where
+id = @id
+return @@rowcount -- C# a sayı dönüyor.
+end
+
+create proc PersonelSil
+(
+@id int
+)
+with encryption
+as
+begin
+delete Personeller
+where
+id = @id
+return @@rowcount -- C# a sayı dönüyor.
+end
+
+
+create proc PersonelListe
+as
+begin
+select * from Personeller
+end
+
+
+create proc PersonelGetirId
+(
+@id int = 0
+)
+with encryption
+as
+begin
+select * from Personeller
+where
+id = @id
+end
+
+create proc PersonelAraEmailAdres
+(
+@emailAdres nvarchar(200)
+)
+as
+begin
+select * from Personeller
+where
+emailAdress=@emailAdres
+end

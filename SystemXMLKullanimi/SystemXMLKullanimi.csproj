@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12F195D1-D883-4F18-9F4D-EC68D36E6080}</ProjectGuid>
+    <ProjectGuid>{7A0FBD99-7BD2-4E1F-A5C0-73190ECDF98E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SQLServerNotlari</RootNamespace>
-    <AssemblyName>SQLServerNotlari</AssemblyName>
+    <RootNamespace>SystemXMLKullanimi</RootNamespace>
+    <AssemblyName>SystemXMLKullanimi</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,21 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="FonksiyonNedir.txt" />
-    <Content Include="StoreProcedure.txt" />
-    <Content Include="FullJoin.txt" />
-    <Content Include="Islemler.txt" />
-    <Content Include="RightJoin.txt" />
-    <Content Include="LeftJoinNedir.txt" />
-    <Content Include="InnerJoinNedir.txt" />
-    <Content Include="DistinctKullanimi.txt" />
-    <Content Include="GroupByKullanimi.txt" />
-    <Content Include="WhereIfadesininKullanimi.txt" />
-    <Content Include="TopIfadesininKullanimi.txt" />
-    <Content Include="KolonIsimleriniDegistirme.txt" />
-    <Content Include="SelectKomutu.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

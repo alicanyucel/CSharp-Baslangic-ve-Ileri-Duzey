@@ -1,0 +1,117 @@
+﻿--Sayısal Fonksiyonlar
+--Min(Kolon)
+--Max(Kolon)
+
+select * from Production.Product
+
+select 
+Color,
+max(SafetyStockLevel) as EnBuyukDeger,
+min(SafetyStockLevel) as EnKucukDeger,
+sum(SafetyStockLevel) as ToplamDeger
+from Production.Product
+group by Color
+
+--Count
+select count(*) from Production.Product
+
+select count(*) from HumanResources.Employee
+where
+LoginID='adventure-works\ken0'
+and NationalIDNumber = '295847284'
+
+select 
+Color,
+count(*) as ToplamMiktar
+from Production.Product
+where Color is not null
+group by Color
+
+-- SUM
+select sum(SafetyStockLevel) from Production.Product
+
+select * from Sales.SalesOrderHeader
+select * from Sales.SalesOrderDetail
+
+select  -- Satışı yapan temsilcinin idsi
+concat (PP.FirstName, ' ' , PP.LastName) as NameSurname,
+sum (SSOD.LineTotal) as Toplam
+from 
+Sales.SalesOrderHeader SSOH
+inner join Sales.SalesOrderDetail SSOD
+on SSOH.SalesOrderID = SSOD.SalesOrderID
+inner join Person.Person PP
+on SSOH.SalesPersonID=PP.BusinessEntityID
+where
+SSOH.OrderDate = '2011-05-31'
+group by concat (PP.FirstName, ' ' , PP.LastName)
+
+select * from Person.Person where BusinessEntityID = 283
+-------------------------------------------------------------------
+select sum(SafetyStockLevel) from Production.Product
+select count(SafetyStockLevel) from Production.Product
+select avg(SafetyStockLevel) from Production.Product
+
+
+select
+concat (PP.FirstName, ' ' , PP.LastName) as NameSurname,
+sum (SSOD.LineTotal) as Toplam,
+avg (SSOD.LineTotal) as Ortalama
+from 
+Sales.SalesOrderHeader SSOH
+inner join Sales.SalesOrderDetail SSOD
+on SSOH.SalesOrderID = SSOD.SalesOrderID
+inner join Person.Person PP
+on SSOH.SalesPersonID=PP.BusinessEntityID
+where
+SSOH.OrderDate = '2011-05-31'
+group by concat (PP.FirstName, ' ' , PP.LastName)
+
+-- Metinsel İşlemler ( Fonksiyonlar )
+
+-- Upper & Lower
+
+select * from HumanResources.Employee
+
+select
+LoginId,
+Upper (LoginID) as BuyukHarf,
+JobTitle,
+Lower(JobTitle) as KucukHarf,
+Lower(Upper(LoginId) )
+from HumanResources. Employee
+
+-- Metinsel İşlemler ( Fonksiyonlar )
+
+-- Upper & Lower
+
+select * from HumanResources.Employee
+
+select
+LoginId,
+Upper (LoginID) as BuyukHarf,
+JobTitle,
+Lower(JobTitle) as KucukHarf,
+Lower(Upper(LoginId) )
+from HumanResources. Employee
+
+select * from Person.Person
+
+select 
+FirstName + ' ' + LastName as [İsim Soyisim],
+concat (FirstName , ' ' , LastName) as İsimSoyisim,
+concat (FirstName ,space(1) , LastName) as İsimSoyisim,
+FirstName,
+Len(FirstName)
+from Person.Person
+where len(FirstName)>3
+
+--SubString
+select 
+Name,
+SUBSTRING(Name,1,3),
+upper(SUBSTRING(Name,1,3)),
+Right(Name,3),
+Left(Name,3)
+from Production.Product
+
