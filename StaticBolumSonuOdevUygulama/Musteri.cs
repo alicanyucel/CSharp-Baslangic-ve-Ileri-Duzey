@@ -13,7 +13,7 @@ namespace StaticBolumSonuOdevUygulama
         static ArrayList musteriDatabase;
         #endregion
 
-        +6#region Static Yapıcı Metot 
+        #region Static Yapıcı Metot 
         static Musteri()
         {
             musteriDatabase = new ArrayList();
