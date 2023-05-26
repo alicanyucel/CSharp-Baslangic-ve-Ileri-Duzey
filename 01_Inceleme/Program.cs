@@ -18,17 +18,28 @@ namespace _01_Inceleme
 
             foreach (Type item in TP)
             {
-                ConstructorInfo[] CTORS = item.GetConstructors();
+                ConstructorInfo[] CTORS = item.GetConstructors(); // ifadesi, belirtilen bir nesnenin (türün) tüm yapıcılarını (constructors) döndüren bir yöntem çağrısıdır.
                 for (int i = 0; i < CTORS.Length; i++)
                 {
                     Console.WriteLine(CTORS[i].ToString());
                 }
 
-                PropertyInfo[] PRP = item.GetProperties();
+                Console.Clear();
+
+                PropertyInfo[] PRP = item.GetProperties(); //  belirtilen bir nesnenin (türün) tüm özelliklerini (properties) döndüren bir yöntem çağrısıdır.
                 for (int i = 0; i < PRP.Length; i++)
                 {
                     Console.WriteLine($"Namespace : {item.Namespace} Isim : {PRP[i].Name} Public : {item.IsPublic} Tam Adı : {item.FullName}");
                 }
+
+                Console.Clear();
+
+                MethodInfo[] MTH = item.GetMethods(); //  belirtilen bir nesnenin (türün) tüm metotlarını (methods) döndüren bir yöntem çağrısıdır.
+                for (int i = 0; i < MTH.Length; i++)
+                {
+                    Console.WriteLine($"Method Adı : {MTH[i].Name}");
+                }
+
                 Console.ReadLine();
             }
         }
