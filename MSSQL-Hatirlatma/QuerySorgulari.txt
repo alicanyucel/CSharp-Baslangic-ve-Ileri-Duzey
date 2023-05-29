@@ -1,0 +1,57 @@
+﻿-- Declare : Yeni bir değişken oluşturma işleminde declare komutu kullanılır.
+-- Genel Yazım
+
+-- declare @degiskenadi nvarchar(50) :
+-- set @degiskenadi = 'Cengiz'
+
+declare @TamIsim nvarchar(30)
+set @TamIsim = 'Efrun Evdi'
+print @TamIsim
+
+declare @TamIsim2 nvarchar(30) = 'Efrun Evdi'
+print @TamIsim2
+
+declare @ToplamKayitSayisi int
+select @ToplamKayitSayisi = count(*) from Production.Product
+print @ToplamKayitSayisi
+
+---------------------------------------------------------------------------------------------------
+
+declare @Personel table
+(
+ID int,
+Isim nvarchar(50),
+Soyisim nvarchar(50)
+)
+
+insert into @Personel(ID,Isim,Soyisim) values (1,'Efrun','Evdi')
+
+select * from @Personel
+
+update @Personel set Isim='Cengiz' where ID=1
+
+select * from @Personel
+
+delete @Personel where ID=1
+
+select * from @Personel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
