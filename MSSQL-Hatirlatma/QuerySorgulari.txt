@@ -36,18 +36,365 @@ delete @Personel where ID=1
 
 select * from @Personel
 
+------------------------------------------------------------------------------------------------------
+
+-- Genel Kullanım
+
+-- IF ŞART VEYA ŞARTLARIMIZ
+-- begin
+-- TSQL kodlarımız
+-- end
+
+-- else
+-- begin
+-- TSQL kodlarımız
+-- end
+
+declare @KullaniciAdi nvarchar(20), @Sifre nvarchar(20)
+set @KullaniciAdi = 'Demo'
+set @Sifre = 'Demo'
+
+if @KullaniciAdi = 'Demo' and @Sifre='Demo'
+begin 
+print 'Kullanıcı giriş işlemi başarılı.'
+end
+
+else
+begin
+print 'Kullanıcı giriş işlemi başarısiz.'
+end
+
+declare @ToplamKayitSayisi int
+select @ToplamKayitSayisi = count(*) from Production.Product
+
+if @ToplamKayitSayisi <= 100
+begin
+print 'Toplam kayıt sayısı 100 den küçük veya eşit'
+end
+
+else if @ToplamKayitSayisi >= 100 and @ToplamKayitSayisi<=200
+begin
+print 'Toplam kayıt sayısı 100 ile 200 arasındadır. '
+end
+
+else
+begin
+print 'Toplam kayıt sayısı 200 den büyüktür. '
+end
+
+-------------------------------------------------------------------------------------------------------
+
+-- Genel Kullanım
+
+-- select case kolonAdi 
+-- when 'Red' then 'Kırmızı'
+-- when 'Red' then 'Kırmızı'
+-- when 'Red' then 'Kırmızı'
+-- when 'Red' then 'Kırmızı'
+-- when 'Red' then 'Kırmızı'
+-- when 'Red' then 'Kırmızı'
+-- else 'Renksiz'
+-- end
+
+select EnglishProductName, Color from DimProduct
+select Distinct Color from DimProduct
+
+select 
+EnglishProductName
+(case Color
+when 'Black' then 'Siyah'
+when 'Blue' then 'Mavi'
+when 'Grey' then 'Gri'
+when 'Multi' then 'Çok Renkli'
+when 'NA' then 'Renksiz'
+when 'Red' then 'Kırmızı'
+when 'Silver' then 'Gümüş'
+when 'Silver/Black' then 'Gümüş/Siyah'
+when 'White' then 'Beyaz'
+when 'Yellow' then 'Sarı'
+else 'Renk tanımı yapılmamış' end)
+as Renkler
+from DimProduct
+
+-------------------------------------------------------------------------------------------------------
+
+-- Genel kullanım
+
+-- while şart
+-- begin
+
+-- end
+
+declare @Isim nvarchar(20) = 'Efrun Evdi'
+declare @Sayac int = 0
+
+while @Sayac <= len(@Isim)
+begin
+print substring (@Isim,1,@Sayac)
+set @Sayac = @Sayac + 1
+end
+print 'While işlemi bitti.'
+
+-------------------------------------------------------------------------------------------------------
+
+-- Local Temp Table : #
+-- Global Temp Table : ##
+
+create table #Personel
+(
+ID int primary key,
+Isim nvarchar(20) not null,
+Soyisim nvarchar(20) not null
+)
+
+insert into #Personel (ID,Isim,Soyisim) values (1,'Cengiz','Atilla')
+insert into #Personel (ID,Isim,Soyisim) values (2,'Efrun','Evdi')
+
+select * from #Personel
+
+update #Personel
+set
+Isim='Ali'
+where
+ID=1
+
+delete #Personel where ID=1
+
+-------------------------------------------------------------------------------------------------------
+
+-- Try Catch
+-- Begin Try
+-- İşlem veya İşlemler
+-- End Try
+-- Begin Catch
+-- Hata olduğu zaman yapma istediğimiz işlemler
+-- End Catch
+
+begin try
+insert into #Personel (ID) values ('Cengiz')
+end try
+begin catch
+print 'Hata oluştu'
+end catch
+
+-------------------------------------------------------------------------------------------------------
+
+-- Scaler
+-- Genel Tanımı
+
+--create function FonksiyonAdi
+--(
+--Parametre ve ya parametreler
+--)
+--return tip
+--as
+--begin
+--Fonksiyon içerisini kodlama
+--end
+
+alter function UrunIDIsimAl
+(
+@ID int
+)
+returns nvarchar(200)
+as
+begin
+declare @BulunanIsim nvarchar(200)
+if(Exists(select count(*) from DimProduct where ProductKey=@ID))
+begin
+select @BulunanIsim  = EnglishProductKey from DimProduct  where ProductKey = @ID
+end
+
+else
+begin
+set @BulunanIsim = 'Aradığınız ID değerine sahip ürün bilgisi bulunamadı.'
+end
+return @BulunanIsim
+end
+
+select dbo.UrunIsimAl(19868)
+
+-------------------------------------------------------------------------------------------------------
+
+-- Table
+
+-- Geriye sorgu döndüren fondiyon
+
+create function IDPRODUCT
+(
+@ID int
+)
+returns table
+as
+return ( select * from DimProduct where ProductKey = @ID)
+
+select * from dbo.IDPRODUCT(1)
+
+
+-- Geriye tablo değişkeni döndüren fonksiyon
+
+create function Personel
+(
+)
+returns @PersonelTablo table
+(
+ID int,
+Isim nvarchar(20),
+Soyisim nvarchar (20)
+)
+as 
+begin
+insert  into @PersonelTablo (ID,Isim,Soyisim) values (1,'Murat','Yılgın')
+return
+end
+
+select * from dbo.Personel()
+
+-------------------------------------------------------------------------------------------------------
+
+--CREATE TRIGGER trigger_adi
+--ON tablo_adi
+--{FOR | AFTER | INSTEAD OF} {INSERT | UPDATE | DELETE}
+--AS
+--Begin
+---- Sql ifadeler
+--End
+
+create table Personel
+(
+ID int,
+Isim nvarchar(20),
+Soyisim nvarchar (20)
+)
+
+insert into Personel (ID,Isim,Soyisim) values (2,'Murat','Atilla')
+
+select * from Personel
+
+create trigger YeniPersonelEkleTrigger
+on Personel
+after insert
+as
+begin
+select 'Yeni personel ekle'
+end
+
+create trigger YeniPersonelGuncelleTrigger
+on Personel
+after update
+as
+begin
+select 'Personel güncellendi'
+end
+
+drop trigger YeniPersonelSilTrigger
+on Personel
+after delete
+as
+begin
+select 'Personel silindi'
+end
+
+update Personel
+set 
+Isim='Mahmut'
+where ID = 2
+
+delete Personel where ID=2
+
+-------------------------------------------------------------------------------------------------------
+
+--CREATE TRIGGER trigger_adi
+--ON tablo_adi
+--{FOR | AFTER | INSTEAD OF} {INSERT | UPDATE | DELETE}
+--AS
+--Begin
+---- Sql ifadeler
+--End
+
+create table Personel
+(
+ID int,
+Isim nvarchar(20),
+Soyisim nvarchar (20)
+)
+
+insert into Personel (ID,Isim,Soyisim) values (2,'Murat','Atilla')
+
+select * from Personel
+
+alter trigger YeniPersonelEkleTrigger
+on Personel
+after insert
+as
+begin
+select * from inserted -- sanal bir tablo
+end
+
+insert into Personel (ID,Isim,Soyisim) values (3,'Murat','Atilla')
 
 
 
+alter trigger YeniPersonelGuncelleTrigger
+on Personel
+after update
+as
+begin
+select * from inserted
+select * from deleted
+end
+
+update Personel
+set 
+Isim='Mahmut'
+where ID = 3
+
+create trigger YeniPersonelSilTrigger
+on Personel
+after delete
+as
+begin
+select * from deleted -- sanal tablo
+end
 
 
+delete Personel where ID=2
 
+update Personel
+set 
+Isim='Mahmut'
+where ID = 2
 
+delete Personel where ID=2
 
+-------------------------------------------------------------------------------------------------------
 
+create table Musteri2
+(
+ID int primary key,
+Isim nvarchar(20),
+Soyisim nvarchar(20),
+EmailAdres nvarchar(30),
+Yas int
+)
 
+create trigger MusteriYasSinirKontrol
+on Musteri2
+for Insert --
+as
+begin
+if exists(select * from inserted where Yas<20)
+begin
+raiserror('Müşterilerin yaş sınırı 20 dir.',1,1)
+rollback transaction
+return
+end
+end
 
+insert into Musteri2(ID,Isim,Soyisim,EmailAdres,Yas) values(110,'Murat','Atilla','m@gmail.com',35)
 
+select * from Musteri2
+insert into Musteri2(ID,Isim,Soyisim,EmailAdres,Yas) values(111,'Efrun','Evdi','me@gmail.com',19)
 
 
 

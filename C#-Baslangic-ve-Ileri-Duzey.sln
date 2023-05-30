@@ -315,6 +315,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40.Bolum", "40.Bolum", "{3D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSQL-Hatirlatma", "MSSQL-Hatirlatma\MSSQL-Hatirlatma.csproj", "{03043512-2435-48F2-8E19-ADDCB6675A83}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "41.Bolum", "41.Bolum", "{2367BD37-DC66-4CAE-BE82-63E8C8809FC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NKatmanli_Mimari_Inceleme", "NKatmanli_Mimari_Inceleme\NKatmanli_Mimari_Inceleme.csproj", "{EE6F1F60-374B-4CA2-95F9-9679B7187AF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -801,6 +805,10 @@ Global
 		{03043512-2435-48F2-8E19-ADDCB6675A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03043512-2435-48F2-8E19-ADDCB6675A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03043512-2435-48F2-8E19-ADDCB6675A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE6F1F60-374B-4CA2-95F9-9679B7187AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6F1F60-374B-4CA2-95F9-9679B7187AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6F1F60-374B-4CA2-95F9-9679B7187AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6F1F60-374B-4CA2-95F9-9679B7187AF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -926,6 +934,7 @@ Global
 		{4CF21E6C-40ED-4002-B8B5-96CC7144C9D1} = {80109841-67F1-4D6B-A9A5-5986C96118CB}
 		{EFB41FCC-E9C4-4EAC-9129-37E73026D760} = {80109841-67F1-4D6B-A9A5-5986C96118CB}
 		{03043512-2435-48F2-8E19-ADDCB6675A83} = {3D50D3A6-85F5-4E10-9722-355F0EB6BCF2}
+		{EE6F1F60-374B-4CA2-95F9-9679B7187AF6} = {2367BD37-DC66-4CAE-BE82-63E8C8809FC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5E4B29E-10B3-45A3-BEC5-A6FE4C1A4095}

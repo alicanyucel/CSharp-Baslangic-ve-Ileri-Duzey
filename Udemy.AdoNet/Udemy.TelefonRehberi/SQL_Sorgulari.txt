@@ -1,0 +1,104 @@
+﻿create database TelefonRehberi
+go
+use TelefonRehberi
+go
+
+create table Kullanici
+(
+KullaniciID uniqueidentifier primary key,
+KullaniciAdi nvarchar(20) unique,
+Sifre nvarchar(20) not null unique,
+)
+
+insert into Kullanici (KullaniciID,KullaniciAdi,Sifre) values (newid(),'Demo','Demo')
+
+create table Rehber
+(
+ID uniqueidentifier primary key,
+Isim nvarchar(30) not null,
+Soyisim nvarchar(30) not null,
+TelefonNumarasiI nvarchar(12) not null,
+TelefonNumarasiII nvarchar(12),
+TelefonNumarasiIII nvarchar(12),
+EmailAdres nvarchar(30),
+WebSite nvarchar(30),
+Adres nvarchar(100),
+Aciklama nvarchar(100)
+)
+
+create proc spRehberYeniKayit
+(
+@ID uniqueidentifier,
+@Isim nvarchar(30),
+@Soyisim nvarchar(30),
+@TelefonNumarasiI nvarchar(12),
+@TelefonNumarasiII nvarchar(12),
+@TelefonNumarasiIII nvarchar(12),
+@EmailAdres nvarchar(30),
+@WebSite nvarchar(30),
+@Adres nvarchar(100),
+@Aciklama nvarchar(100)
+)
+as
+begin
+insert into Rehber (ID,Isim,Soyisim,TelefonNumarasiI,TelefonNumarasiII,TelefonNumarasiIII,EmailAdres,WebSite,Adres,Aciklama) values
+(@ID,@Isim,@Soyisim,@TelefonNumarasiI,@TelefonNumarasiII,@TelefonNumarasiIII,@EmailAdres,@WebSite,@Adres,@Aciklama)
+end
+
+create proc spRehberKayitDuzenle
+(
+@ID uniqueidentifier,
+@Isim nvarchar(30),
+@Soyisim nvarchar(30),
+@TelefonNumarasiI nvarchar(12),
+@TelefonNumarasiII nvarchar(12),
+@TelefonNumarasiIII nvarchar(12),
+@EmailAdres nvarchar(30),
+@WebSite nvarchar(30),
+@Adres nvarchar(100),
+@Aciklama nvarchar(100)
+)
+as
+begin
+update Rehber 
+set
+ID = @ID,
+Isim = @Isim,
+Soyisim = @Soyisim,
+TelefonNumarasiI = @TelefonNumarasiI,
+TelefonNumarasiII = @TelefonNumarasiII,
+TelefonNumarasiIII = @TelefonNumarasiIII,
+EmailAdres = @EmailAdres,
+WebSite = @WebSite,
+Adres = @Adres,
+Aciklama = @Aciklama
+where
+ID = @ID
+end
+
+create proc spRehberKayitSil
+(
+@ID uniqueidentifier
+)
+as
+begin
+delete Rehber
+where 
+ID = @ID
+end
+
+create proc spRehberListe
+as
+begin
+select * from Rehber
+end
+
+create proc spRehberID
+(
+@ID uniqueidentifier
+)
+as
+begin
+select * from Rehber
+where ID = @ID
+end
