@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E11B8EAF-47AD-4B37-B478-AEE29D5F40D5}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Udemy.DatabaseLogicLayer</RootNamespace>
-    <AssemblyName>Udemy.DatabaseLogicLayer</AssemblyName>
+    <ProjectGuid>{44A48529-BFC5-43C3-8B71-D84E3C5BA931}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>_01StandartKullanim</RootNamespace>
+    <AssemblyName>01StandartKullanim</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,14 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DLL.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="BusinessLogicLayer.cs" />
+    <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="DataAccessLayer_II.cs" />
+    <Compile Include="Ogrenci.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Udemy.Entities\Udemy.Entities.csproj">
-      <Project>{21f29d2e-7037-4c7f-8649-0a82797dcd20}</Project>
-      <Name>Udemy.Entities</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

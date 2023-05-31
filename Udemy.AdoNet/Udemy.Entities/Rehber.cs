@@ -19,5 +19,10 @@ namespace Udemy.Entities
         public string Adres { get; set; }
         public string Website { get; set; }
         public string Aciklama { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format($"{Isim} {Soyisim}");
+        }
     }
 }

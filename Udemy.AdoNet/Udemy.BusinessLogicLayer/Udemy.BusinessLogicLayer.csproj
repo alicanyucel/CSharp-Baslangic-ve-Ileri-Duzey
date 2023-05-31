@@ -41,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Udemy.DatabaseLogicLayer\Udemy.DatabaseLogicLayer.csproj">
+      <Project>{e11b8eaf-47ad-4b37-b478-aee29d5f40d5}</Project>
+      <Name>Udemy.DatabaseLogicLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Udemy.Entities\Udemy.Entities.csproj">
       <Project>{21f29d2e-7037-4c7f-8649-0a82797dcd20}</Project>
       <Name>Udemy.Entities</Name>
