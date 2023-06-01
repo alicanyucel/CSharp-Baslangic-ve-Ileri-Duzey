@@ -329,6 +329,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "44.Bolum", "44.Bolum", "{CA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01StandartKullanim", "01StandartKullanim\01StandartKullanim.csproj", "{44A48529-BFC5-43C3-8B71-D84E3C5BA931}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "45.Bolum", "45.Bolum", "{013D95D3-E776-493C-AF3A-1AAEA86451AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailGondermeIslemleri", "EmailGondermeIslemleri\EmailGondermeIslemleri.csproj", "{8991B163-60B9-4A5B-8583-F794BA692FD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "46.Bolum", "46.Bolum", "{38F5A6A3-6CD3-4310-814A-5556C57A4ADB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -827,6 +833,10 @@ Global
 		{44A48529-BFC5-43C3-8B71-D84E3C5BA931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44A48529-BFC5-43C3-8B71-D84E3C5BA931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44A48529-BFC5-43C3-8B71-D84E3C5BA931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8991B163-60B9-4A5B-8583-F794BA692FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8991B163-60B9-4A5B-8583-F794BA692FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8991B163-60B9-4A5B-8583-F794BA692FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8991B163-60B9-4A5B-8583-F794BA692FD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -955,6 +965,7 @@ Global
 		{EE6F1F60-374B-4CA2-95F9-9679B7187AF6} = {2367BD37-DC66-4CAE-BE82-63E8C8809FC3}
 		{12E45F4A-F055-473B-B35F-13C0FA568A8F} = {8E4AB566-89D4-4ABF-93E5-EAC60F47D2B1}
 		{44A48529-BFC5-43C3-8B71-D84E3C5BA931} = {CA31E25E-70C3-4374-AA0A-F4DEBFDB04C9}
+		{8991B163-60B9-4A5B-8583-F794BA692FD8} = {013D95D3-E776-493C-AF3A-1AAEA86451AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C5E4B29E-10B3-45A3-BEC5-A6FE4C1A4095}

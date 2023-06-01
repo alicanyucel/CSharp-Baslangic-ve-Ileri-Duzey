@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01StandartKullanim
+namespace Udemy.Doviz.Core
 {
-    public class Base
+    public class BaseClass
     {
-        public void TryCatchKullanim(Action action)
+        public void TryCatchKullan(Action _action)
         {
             try
             {
-                action();
+                _action();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Nlog ile loglama işlemi yapılacak .
+                // Loglama işlemleri burada olsun .
             }
         }
     }

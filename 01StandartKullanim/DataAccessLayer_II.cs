@@ -21,7 +21,6 @@ namespace _01StandartKullanim
         {
             int ReturnValue = 0;
 
-
             TryCatchKullanim(() =>
             {
                 cmd = new SqlCommand("insert into Tanim (Isim,Soyisim,Sinif) values (@Isim,@Soyisim,@Sinif)", con);
@@ -32,7 +31,6 @@ namespace _01StandartKullanim
                 ReturnValue = cmd.ExecuteNonQuery();
                 con.Close();
             });
-
 
             return ReturnValue;
         }
