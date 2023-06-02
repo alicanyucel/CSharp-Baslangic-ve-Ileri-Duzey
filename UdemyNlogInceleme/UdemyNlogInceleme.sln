@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNlogInceleme.FileLoglama", "UdemyNlogInceleme.FileLoglama\UdemyNlogInceleme.FileLoglama.csproj", "{45151123-8AF9-4241-811F-11198BDED454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyNlogInceleme.DatabaseLoglama", "UdemyNlogInceleme.DatabaseLoglama\UdemyNlogInceleme.DatabaseLoglama.csproj", "{06A7C2E4-5F7F-4E31-9208-767DEAAD01D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45151123-8AF9-4241-811F-11198BDED454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45151123-8AF9-4241-811F-11198BDED454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45151123-8AF9-4241-811F-11198BDED454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45151123-8AF9-4241-811F-11198BDED454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A7C2E4-5F7F-4E31-9208-767DEAAD01D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A7C2E4-5F7F-4E31-9208-767DEAAD01D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A7C2E4-5F7F-4E31-9208-767DEAAD01D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A7C2E4-5F7F-4E31-9208-767DEAAD01D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
