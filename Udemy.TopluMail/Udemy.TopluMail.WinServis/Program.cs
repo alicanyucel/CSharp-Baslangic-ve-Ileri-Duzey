@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Udemy.TopluMail.WinServis
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -17,7 +17,7 @@ namespace Udemy.TopluMail.WinServis
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new TopluMailUygulamaServisi()
             };
             ServiceBase.Run(ServicesToRun);
         }

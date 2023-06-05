@@ -13,7 +13,7 @@ namespace Udemy.TopluMail.Entities
         public string Soyad { get; set; }
         public string EmailAdres { get; set; }
         public string KuponKOD { get; set; }
-        public string KuponDurum { get; set; }
+        public bool KuponDurum { get; set; }
         public DateTime KuponAktifTarih { get; set; }
     }
 }

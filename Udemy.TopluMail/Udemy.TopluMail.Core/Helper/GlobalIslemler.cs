@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Udemy.TopluMail.Core.Helper
 {
-    public class GlobalIslemler
+    public class globalIslemler
     {
         public void TryCatchKullan(Action action)
         {
@@ -17,12 +17,11 @@ namespace Udemy.TopluMail.Core.Helper
             }
             catch (Exception ex)
             {
-                // NLog;
                 string ExStr = Newtonsoft.Json.JsonConvert.SerializeObject(ex);
-
                 var logger = NLog.LogManager.GetCurrentClassLogger();
                 logger.Log(LogLevel.Error, ExStr);
             }
         }
     }
+
 }

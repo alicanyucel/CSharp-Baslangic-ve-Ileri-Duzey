@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.WebServisMimarisi", "Udemy.WebServisMimarisi\Udemy.WebServisMimarisi.csproj", "{95B30F7E-C57D-4A2C-8ABF-D3B37934ECAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95B30F7E-C57D-4A2C-8ABF-D3B37934ECAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B30F7E-C57D-4A2C-8ABF-D3B37934ECAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B30F7E-C57D-4A2C-8ABF-D3B37934ECAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B30F7E-C57D-4A2C-8ABF-D3B37934ECAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B2B77C6-358D-4BC6-A76F-5FC8AAFC5F49}
+	EndGlobalSection
+EndGlobal

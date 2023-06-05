@@ -1,6 +1,6 @@
 ﻿namespace Udemy.TopluMail.WinServis
 {
-    partial class Service1
+    partial class TopluMailUygulamaServisi
     {
         /// <summary> 
         /// Required designer variable.

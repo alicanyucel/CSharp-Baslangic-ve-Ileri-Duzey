@@ -1,24 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33723.286
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.Core", "Udemy.TopluMail.Core\Udemy.TopluMail.Core.csproj", "{D9C271DF-4CEE-4F51-A58E-FBEC8B6C621A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.Core", "Udemy.TopluMail.Core\Udemy.TopluMail.Core.csproj", "{9F478D26-5927-4491-BE7B-086DAF06B7BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.Entities", "Udemy.TopluMail.Entities\Udemy.TopluMail.Entities.csproj", "{10D57C9D-82CD-4432-B103-F8C1F90B3E76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.Entities", "Udemy.TopluMail.Entities\Udemy.TopluMail.Entities.csproj", "{88BF1F1D-C5FD-47BA-A99A-C485B37A3415}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.ConsoleApp", "Udemy.TopluMail.ConsoleApp\Udemy.TopluMail.ConsoleApp.csproj", "{4E0F4B47-145A-4B42-9A3E-35EF26A195FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.ConsoleApp", "Udemy.TopluMail.ConsoleApp\Udemy.TopluMail.ConsoleApp.csproj", "{699B0B5F-6F76-4C49-8463-D5BC4FBE2978}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.Goruntule", "Udemy.TopluMail.Goruntule\Udemy.TopluMail.Goruntule.csproj", "{4541716E-58DD-4003-B52E-EFA6CDF31F30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.Goruntule", "Udemy.TopluMail.Goruntule\Udemy.TopluMail.Goruntule.csproj", "{24D21E96-3252-46C8-AFD5-5574EF83C871}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.WinServis", "Udemy.TopluMail.WinServis\Udemy.TopluMail.WinServis.csproj", "{89414BA1-E972-45BA-BB88-A880B09EF16A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.WinServis", "Udemy.TopluMail.WinServis\Udemy.TopluMail.WinServis.csproj", "{33767C84-5D92-48D1-8F74-9F36C77E0C4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.W3", "Udemy.TopluMail.W3\Udemy.TopluMail.W3.csproj", "{7126BA02-D3A0-4531-82E9-37B136135F33}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7885B8BC-ABBA-4C14-BF2F-B89F1D348236}"
-	ProjectSection(SolutionItems) = preProject
-		SqlSorgulari.sql = SqlSorgulari.sql
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Udemy.TopluMail.W3", "Udemy.TopluMail.W3\Udemy.TopluMail.W3.csproj", "{FD54E853-1930-4365-8D4E-84807889A90F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,35 +21,32 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D9C271DF-4CEE-4F51-A58E-FBEC8B6C621A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9C271DF-4CEE-4F51-A58E-FBEC8B6C621A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9C271DF-4CEE-4F51-A58E-FBEC8B6C621A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9C271DF-4CEE-4F51-A58E-FBEC8B6C621A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10D57C9D-82CD-4432-B103-F8C1F90B3E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10D57C9D-82CD-4432-B103-F8C1F90B3E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10D57C9D-82CD-4432-B103-F8C1F90B3E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10D57C9D-82CD-4432-B103-F8C1F90B3E76}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E0F4B47-145A-4B42-9A3E-35EF26A195FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E0F4B47-145A-4B42-9A3E-35EF26A195FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E0F4B47-145A-4B42-9A3E-35EF26A195FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E0F4B47-145A-4B42-9A3E-35EF26A195FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4541716E-58DD-4003-B52E-EFA6CDF31F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4541716E-58DD-4003-B52E-EFA6CDF31F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4541716E-58DD-4003-B52E-EFA6CDF31F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4541716E-58DD-4003-B52E-EFA6CDF31F30}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89414BA1-E972-45BA-BB88-A880B09EF16A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89414BA1-E972-45BA-BB88-A880B09EF16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89414BA1-E972-45BA-BB88-A880B09EF16A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89414BA1-E972-45BA-BB88-A880B09EF16A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7126BA02-D3A0-4531-82E9-37B136135F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7126BA02-D3A0-4531-82E9-37B136135F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7126BA02-D3A0-4531-82E9-37B136135F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7126BA02-D3A0-4531-82E9-37B136135F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F478D26-5927-4491-BE7B-086DAF06B7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F478D26-5927-4491-BE7B-086DAF06B7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F478D26-5927-4491-BE7B-086DAF06B7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F478D26-5927-4491-BE7B-086DAF06B7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88BF1F1D-C5FD-47BA-A99A-C485B37A3415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BF1F1D-C5FD-47BA-A99A-C485B37A3415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BF1F1D-C5FD-47BA-A99A-C485B37A3415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BF1F1D-C5FD-47BA-A99A-C485B37A3415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699B0B5F-6F76-4C49-8463-D5BC4FBE2978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699B0B5F-6F76-4C49-8463-D5BC4FBE2978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699B0B5F-6F76-4C49-8463-D5BC4FBE2978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699B0B5F-6F76-4C49-8463-D5BC4FBE2978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D21E96-3252-46C8-AFD5-5574EF83C871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D21E96-3252-46C8-AFD5-5574EF83C871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D21E96-3252-46C8-AFD5-5574EF83C871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D21E96-3252-46C8-AFD5-5574EF83C871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33767C84-5D92-48D1-8F74-9F36C77E0C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33767C84-5D92-48D1-8F74-9F36C77E0C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33767C84-5D92-48D1-8F74-9F36C77E0C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33767C84-5D92-48D1-8F74-9F36C77E0C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD54E853-1930-4365-8D4E-84807889A90F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD54E853-1930-4365-8D4E-84807889A90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD54E853-1930-4365-8D4E-84807889A90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD54E853-1930-4365-8D4E-84807889A90F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E0482F96-6297-475D-A1DD-F51BC6F0B319}
 	EndGlobalSection
 EndGlobal
