@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UrunKayitDuzenle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="U" type="tns:Urun" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Urun">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UrunKimlik" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tanim" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aciklama" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StokAdet" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UrunKayitDuzenleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UrunKayitDuzenleResult" type="tns:OutputType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="OutputType">
+        <s:restriction base="s:string">
+          <s:enumeration value="IslemBasarili" />
+          <s:enumeration value="IslemBasarisiz" />
+          <s:enumeration value="Tanimsiz" />
+          <s:enumeration value="KayitliUrun" />
+          <s:enumeration value="YeniUrun" />
+          <s:enumeration value="UrunBulunamadi" />
+          <s:enumeration value="GuvenlikHatasi" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Guvenlik" type="tns:Guvenlik" />
+      <s:complexType name="Guvenlik">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KullaniciAdi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sifre" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="UrunKayitSil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UrunKimlik" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrunKayitSilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UrunKayitSilResult" type="tns:OutputType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrunTumListe">
+        <s:complexType />
+      </s:element>
+      <s:element name="UrunTumListeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UrunTumListeResult" type="tns:ArrayOfUrun" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUrun">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Urun" nillable="true" type="tns:Urun" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UrunGetir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UrunKimlik" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrunGetirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UrunGetirResult" type="tns:Urun" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UrunKayitDuzenleSoapIn">
+    <wsdl:part name="parameters" element="tns:UrunKayitDuzenle" />
+  </wsdl:message>
+  <wsdl:message name="UrunKayitDuzenleSoapOut">
+    <wsdl:part name="parameters" element="tns:UrunKayitDuzenleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UrunKayitDuzenleGuvenlik">
+    <wsdl:part name="Guvenlik" element="tns:Guvenlik" />
+  </wsdl:message>
+  <wsdl:message name="UrunKayitSilSoapIn">
+    <wsdl:part name="parameters" element="tns:UrunKayitSil" />
+  </wsdl:message>
+  <wsdl:message name="UrunKayitSilSoapOut">
+    <wsdl:part name="parameters" element="tns:UrunKayitSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="UrunKayitSilGuvenlik">
+    <wsdl:part name="Guvenlik" element="tns:Guvenlik" />
+  </wsdl:message>
+  <wsdl:message name="UrunTumListeSoapIn">
+    <wsdl:part name="parameters" element="tns:UrunTumListe" />
+  </wsdl:message>
+  <wsdl:message name="UrunTumListeSoapOut">
+    <wsdl:part name="parameters" element="tns:UrunTumListeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UrunGetirSoapIn">
+    <wsdl:part name="parameters" element="tns:UrunGetir" />
+  </wsdl:message>
+  <wsdl:message name="UrunGetirSoapOut">
+    <wsdl:part name="parameters" element="tns:UrunGetirResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UrunServisSoap">
+    <wsdl:operation name="UrunKayitDuzenle">
+      <wsdl:input message="tns:UrunKayitDuzenleSoapIn" />
+      <wsdl:output message="tns:UrunKayitDuzenleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UrunKayitSil">
+      <wsdl:input message="tns:UrunKayitSilSoapIn" />
+      <wsdl:output message="tns:UrunKayitSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UrunTumListe">
+      <wsdl:input message="tns:UrunTumListeSoapIn" />
+      <wsdl:output message="tns:UrunTumListeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UrunGetir">
+      <wsdl:input message="tns:UrunGetirSoapIn" />
+      <wsdl:output message="tns:UrunGetirSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UrunServisSoap" type="tns:UrunServisSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UrunKayitDuzenle">
+      <soap:operation soapAction="http://tempuri.org/UrunKayitDuzenle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UrunKayitDuzenleGuvenlik" part="Guvenlik" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunKayitSil">
+      <soap:operation soapAction="http://tempuri.org/UrunKayitSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UrunKayitSilGuvenlik" part="Guvenlik" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunTumListe">
+      <soap:operation soapAction="http://tempuri.org/UrunTumListe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunGetir">
+      <soap:operation soapAction="http://tempuri.org/UrunGetir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UrunServisSoap12" type="tns:UrunServisSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UrunKayitDuzenle">
+      <soap12:operation soapAction="http://tempuri.org/UrunKayitDuzenle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UrunKayitDuzenleGuvenlik" part="Guvenlik" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunKayitSil">
+      <soap12:operation soapAction="http://tempuri.org/UrunKayitSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UrunKayitSilGuvenlik" part="Guvenlik" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunTumListe">
+      <soap12:operation soapAction="http://tempuri.org/UrunTumListe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrunGetir">
+      <soap12:operation soapAction="http://tempuri.org/UrunGetir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UrunServis">
+    <wsdl:port name="UrunServisSoap" binding="tns:UrunServisSoap">
+      <soap:address location="https://localhost:44327/UrunServis.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UrunServisSoap12" binding="tns:UrunServisSoap12">
+      <soap12:address location="https://localhost:44327/UrunServis.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
