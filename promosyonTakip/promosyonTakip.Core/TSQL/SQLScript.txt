@@ -1,0 +1,74 @@
+﻿create database promosyonSepeti
+GO
+use promosyonSepeti
+GO
+
+create table sistemMagaza
+(
+id int identity(1,1) primary key,
+tanim nvarchar(100),
+adres nvarchar(100),
+yetkiliKisi nvarchar(100),
+kullaniciAdi nvarchar(50) unique,
+sifre nvarchar(50)
+)
+
+insert into sistemMagaza values ('Sefaköy AVM Mağaza - 1','Sefaköy','cengiz Atilla','cengizatilla','1')
+insert into sistemMagaza values ('Sefaköy AVM Mağaza - 2','Sefaköy','Hamza Atilla','hamzaatilla','1')
+
+insert into sistemMagaza values ('Bayrampaşa AVM Mağaza','Bayrampaşa','Murat YILGIN','muratyilgin','2')
+
+select * from sistemMagaza
+
+Go 
+
+create table potansiyelMusteri
+(
+id int identity(1,1) primary key,
+tcKimlikNumara nvarchar(15),
+isim nvarchar(50),
+soyisim nvarchar(50),
+dogumTarih datetime,
+cinsiyet int,
+meslek nvarchar(100),
+emailAdres nvarchar(100),
+emailBildirimOnay bit,
+telefon nvarchar(15),
+telefonBildirimOnay bit,
+olusturmaTarih datetime,
+olusturmaMagaza int
+)
+
+select * from potansiyelMusteri
+
+Go 
+
+create table promosyonUrun
+(
+id int identity(1,1) primary key,
+tanim nvarchar(100),
+aciklama nvarchar(250),
+gecerlilikTarih datetime,
+kullanimDurum bit
+)
+
+insert into promosyonUrun values ('%10','indirim tüm mağazalarda geçerli','2019.04.01',0)
+insert into promosyonUrun values ('%20','indirim tüm mağazalarda geçerli','2019.04.01',0)
+insert into promosyonUrun values ('%30','indirim tüm mağazalarda geçerli','2019.04.01',0)
+insert into promosyonUrun values ('%40','indirim tüm mağazalarda geçerli','2019.04.01',0)
+insert into promosyonUrun values ('%50','indirim tüm mağazalarda geçerli','2019.04.01',0)
+insert into promosyonUrun values ('%60','indirim tüm mağazalarda geçerli','2019.04.01',0)
+insert into promosyonUrun values ('%70','indirim tüm mağazalarda geçerli','2019.04.01',0)
+
+select  top 42 * from promosyonUrun where kullanimDurum = 0 order by NEWID()
+
+create table katilimciPromosyon
+(
+id int identity(1,1) primary key,
+potansiyelMusteriId int,
+promosyonUrunId int,
+olusturmaTarih datetime,
+magazaId int
+)
+
+select * from katilimciPromosyon
