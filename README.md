@@ -1,1 +1,0 @@
-# C#-Baslangic-ve-Ileri-Duzey
