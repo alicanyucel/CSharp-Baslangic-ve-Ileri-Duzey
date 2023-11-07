@@ -1,0 +1,103 @@
+USE [SMARTFACTORY]
+GO
+/** Object:  StoredProcedure [dbo].[sp_creaatemodel]    Script Date: 21.11.2022 21:43:49 **/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- exec sp_creaatemodel @objename  ='users'
+-- exec sp_creaatemodel @objename = NULL
+
+ALTER procedure [dbo].[sp_creaatemodel]
+	@objename nvarchar(255) =null
+as
+begin
+
+	declare @objeid int=0
+	declare @name nvarchar(255)=''
+	declare @q1 nvarchar(200) =''
+	declare @q2 nvarchar(max) =''
+	declare @qr nvarchar(max) =''
+
+	IF @objename IS NULL
+	BEGIN
+		DECLARE @CROBJEID INT
+		DECLARE @CNAME NVARCHAR(255)
+
+		DECLARE CR_OBJECTS CURSOR FOR
+		SELECT object_id, name
+		from SYS.OBJECTS 
+		WHERE TYPE = 'U'
+
+		OPEN CR_OBJECTS 
+
+		FETCH NEXT FROM CR_OBJECTS INTO @CROBJEID, @CNAME
+
+		WHILE @@FETCH_STATUS =0
+			BEGIN
+				SELECT  @q1  = 'public class ' + lower(name) + char(13) + '{' + char(13) 
+				from SYS.OBJECTS 
+				where name = @CNAME
+
+				Select @q2 = (
+										select 'public ' +
+										case 
+											when st.name like '%char%' then lower(st.name) + '(' + cast(st.length as nvarchar(10))+') ' 
+											else lower(st.name)
+										end + ' '
+										 + lower(sc.name  COLLATE Latin1_General_CS_AS) 
+										 + ' { get; set; } ' + char(13)  
+										from SYS.columns sc
+										inner join SYS.systypes st on st.xtype = sc.system_type_id
+										where sc.object_id = @CROBJEID 
+										FOR XML PATH('')
+										)  
+				select @qr = @q1 + @q2 + char(13) +  '}'
+
+				select @qr = replace(@qr, '&#x0D;',char(13))
+				select @qr 
+				print @qr 
+				
+				FETCH NEXT FROM CR_OBJECTS INTO @CROBJEID, @CNAME
+			END
+
+
+	
+		CLOSE CR_OBJECTS
+		DEALLOCATE CR_OBJECTS
+
+	END 
+	ELSE
+		BEGIN
+		SELECT @objeid = object_id
+		from SYS.OBJECTS 
+		where name = @objename
+
+
+		SELECT  @q1  = 'public class ' + lower(name) + char(13) + '{' + char(13) 
+		from SYS.OBJECTS 
+		where name = @objename
+		Select @q2 = (
+								select 'public ' +
+								case 
+									when st.name like '%char%' then lower(st.name) + '(' + cast(st.length as nvarchar(10))+') ' 
+									else lower(st.name)
+								end + ' '
+								 + lower(sc.name  COLLATE Latin1_General_CS_AS) 
+								 + ' { get; set; } ' + char(13)  
+								from SYS.columns sc
+								inner join SYS.systypes st on st.xtype = sc.system_type_id
+								where sc.object_id = @objeid 
+								FOR XML PATH('')
+								)  
+		--select @q2 
+		select @qr = @q1 + @q2 + char(13) +  '}'
+
+		select @qr = replace(@qr, '&#x0D;',char(13))
+		select @qr 
+		print @qr 
+
+	END
+END
+// sonrasında prosedürü çalıştırmak için aşağıdaki kodu giriyoruz
+exec sp_creaatemodel @objename = NULL
